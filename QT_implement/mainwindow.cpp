@@ -292,7 +292,7 @@ void MainWindow::on_compressButton_clicked()
     Timer.restart();
     decompressFile(compressed,decompressed);
     auto decompress_duration=Timer.elapsed();
-    ui->info->setText(ui->info->text()+"Compression time: "+QString::number(compress_duration)+"microseconds\n"+"Decompression time: "+QString::number(decompress_duration)+"microseconds\n");
+    ui->info->setText(ui->info->text()+"Compression time: "+QString::number(compress_duration)+"milliseconds\n"+"Decompression time: "+QString::number(decompress_duration)+"milliseconds\n");
 }
 
 
