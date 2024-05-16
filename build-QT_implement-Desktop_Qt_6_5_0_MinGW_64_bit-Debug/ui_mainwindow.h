@@ -69,10 +69,10 @@ public:
         label_3->setGeometry(QRect(520, 400, 161, 16));
         label_4 = new QLabel(centralwidget);
         label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(110, 500, 49, 16));
+        label_4->setGeometry(QRect(110, 500, 16, 16));
         info = new QLabel(centralwidget);
         info->setObjectName("info");
-        info->setGeometry(QRect(240, 480, 251, 51));
+        info->setGeometry(QRect(240, 480, 251, 71));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -97,7 +97,7 @@ public:
         label->setText(QCoreApplication::translate("MainWindow", "Input File Path:", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Name of Compressed File:", nullptr));
         label_3->setText(QCoreApplication::translate("MainWindow", "Name of Decompressed File:", nullptr));
-        label_4->setText(QCoreApplication::translate("MainWindow", "Start", nullptr));
+        label_4->setText(QCoreApplication::translate("MainWindow", "Go", nullptr));
         info->setText(QString());
     } // retranslateUi
 

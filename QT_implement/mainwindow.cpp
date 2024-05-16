@@ -5,6 +5,8 @@
 #include <QFileDialog>
 #include <iostream>
 #include <fstream>
+#include "QElapsedTimer"
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -276,6 +278,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_compressButton_clicked()
 {
+    QElapsedTimer Timer;
     ui->info->setText("");
     QString infileName = ui->lineEdit->text();
     QString comp = ui->lineEdit_2->text();
@@ -283,9 +286,13 @@ void MainWindow::on_compressButton_clicked()
     string infile=infileName.toStdString();
     string compressed=comp.toStdString();
     string decompressed=decomp.toStdString();
+    Timer.start();
     compressFile(infile,compressed);
+    auto compress_duration = Timer.elapsed();
+    Timer.restart();
     decompressFile(compressed,decompressed);
-
+    auto decompress_duration=Timer.elapsed();
+    ui->info->setText(ui->info->text()+"Compression time: "+QString::number(compress_duration)+"microseconds\n"+"Decompression time: "+QString::number(decompress_duration)+"microseconds\n");
 }
 
 
